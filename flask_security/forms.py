@@ -96,20 +96,20 @@ class Form(BaseForm):
 class EmailFormMixin():
     email = StringField(
         get_form_field_label('email'),
-        validators=[email_required, email_validator])
+        validators=[email_required])
 
 
 class UserEmailFormMixin():
     user = None
     email = StringField(
         get_form_field_label('email'),
-        validators=[email_required, email_validator, valid_user_email])
+        validators=[email_required, valid_user_email])
 
 
 class UniqueEmailFormMixin():
     email = StringField(
         get_form_field_label('email'),
-        validators=[email_required, email_validator, unique_user_email])
+        validators=[email_required, unique_user_email])
 
 
 class PasswordFormMixin():
